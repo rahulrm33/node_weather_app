@@ -11,6 +11,8 @@ const forecast=require('./utility/forecast.js')
 
 
 const app=express()
+const port =process.env.PORT || 3000
+
 const publicDirectoryPath=path.join(__dirname,'../public')
 const pathViews=path.join(__dirname,'../templates/views')
 const partialsPath=path.join(__dirname,'../templates/partials')
@@ -47,7 +49,7 @@ app.get('/about',(req,res)=>{
 
 app.get('/help',(req,res)=>{
    res.render('help',{
-       msg:'Hii,How can I help YOU...!!',
+       msg:'Hii ,How can I help YOU...!!',
        title:'HELP',
        name:'Rahul_R.M.'
    })
@@ -94,8 +96,8 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log('server is up in 3000')
+app.listen(port,()=>{
+    console.log('server is up in 3000 '+ port)
 })
 
 
